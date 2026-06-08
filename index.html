@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hennebert Plomberie · Plombier-Chauffagiste à Liège</title>
+<meta name="description" content="Hennebert Plomberie · Plombier-chauffagiste à Liège. Dépannage 24/7, recherche de fuite, chaudières, sanitaires, rénovation salle de bain." />
+
+<!-- ================================================================
+     CONFIGURATION — Modifie ces variables pour personnaliser le site.
+     Tout est centralisé ici en haut du fichier.
+     ================================================================ -->
+<script>
+const SITE = {
+  business: {
+    name: "Hennebert Plomberie",
+    shortName: "Hennebert",
+    yearsOfExperience: 18,
+    rating: 4.9,
+    reviewsCount: 247,
+  },
+  contact: {
+    phoneDisplay: "+32 4 123 45 67",
+    phoneRaw: "+3241234567",
+    emergencyPhoneDisplay: "+32 470 12 34 56",
+    emergencyPhoneRaw: "+32470123456",
+    email: "contact@hennebert-plomberie.be",
+    address: { street: "Rue Saint-Gilles 142", postal: "4000", city: "Liège", country: "Belgique" },
+    hours: { weekdays: "Lun – Ven : 7h30 – 18h00", saturday: "Samedi : 8h00 – 13h00", emergency: "Urgences 24h/24 — 7j/7" },
+    legal: { bce: "BE 0758.123.456", tva: "BE 0758.123.456", insurance: "Assurance RC Pro Ethias" },
+  },
+  services: [
+    { icon: "wrench", title: "Dépannage rapide", desc: "Fuite, robinet cassé, WC bouché : intervention sous 1 h dans toute la région liégeoise." },
+    { icon: "droplets", title: "Recherche de fuite", desc: "Détection non destructive par caméra thermique et gaz traceur. Diagnostic précis garanti." },
+    { icon: "flame", title: "Chauffage & Chaudière", desc: "Installation, entretien annuel obligatoire et dépannage de chaudières gaz et mazout." },
+    { icon: "shower", title: "Sanitaires & Installation", desc: "Pose de WC, lavabos, douches et baignoires. Matériel de marque, finition soignée." },
+    { icon: "waves", title: "Débouchage canalisation", desc: "Débouchage haute pression d'éviers, douches, WC et égouts. Caméra d'inspection." },
+    { icon: "bath", title: "Rénovation salle de bain", desc: "Rénovation complète clé en main : plomberie, carrelage, mobilier et électricité." },
+  ],
+  values: [
+    "Devis gratuit et sans engagement",
+    "Intervention rapide sur Liège et alentours",
+    "Tarifs transparents — pas de surprise",
+    "Garantie sur toutes les pièces et la main-d'œuvre",
+    "Certifié Cerga (gaz) & Aquawal",
+    "Plus de 247 avis clients vérifiés",
+  ],
+  certifications: [
+    { label: "Cerga", sub: "Installateur gaz agréé" },
+    { label: "Aquawal", sub: "Eau potable" },
+    { label: "RC Pro", sub: "Assurance Ethias" },
+    { label: "BCE", sub: "Entreprise enregistrée" },
+  ],
+  coverage: ["Liège Centre","Outremeuse","Sainte-Walburge","Sclessin","Cointe","Angleur","Chênée","Wandre","Jupille","Bressoux","Grivegnée","Rocourt","Herstal","Ans","Saint-Nicolas","Seraing","Tilff","Embourg","Beyne-Heusay","Visé","Fléron","Chaudfontaine"],
+  testimonials: [
+    { name: "Sophie M.", loc: "Outremeuse, Liège", text: "Fuite sous l'évier un dimanche soir. Arrivé en 40 minutes, problème réglé en moins d'une heure. Très professionnel et tarif honnête." },
+    { name: "Jean-Pierre L.", loc: "Herstal", text: "Rénovation complète de notre salle de bain. Travail impeccable, délais respectés, et un sens du détail rare. Je recommande vivement." },
+    { name: "Aïcha B.", loc: "Sclessin", text: "Chaudière en panne en plein hiver, avec deux enfants à la maison. Diagnostic clair, pièce changée le jour même. Merci !" },
+    { name: "David V.", loc: "Chênée", text: "Recherche de fuite invisible dans un mur. Détection précise sans tout casser. Économies énormes par rapport au devis d'un concurrent." },
+    { name: "Martine D.", loc: "Angleur", text: "Entretien annuel de la chaudière fait dans les règles, avec attestation. Ponctuel, propre, courtois. Que demander de plus ?" },
+    { name: "Olivier R.", loc: "Embourg", text: "Installation d'une nouvelle douche italienne. Travail soigné, conseils pertinents sur le matériel. Très satisfait du résultat final." },
+  ],
+};
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        heading: ['Outfit', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background: #fff; color: #0f172a; }
+  .font-heading { font-family: 'Outfit', sans-serif; }
+  ::selection { background: #ea580c; color: #fff; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fade-up 0.7s ease-out both; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease-out, transform .6s ease-out; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============== BANDEAU URGENCE 24/7 ============== -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-orange-600 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <span class="hidden sm:inline">Urgence plomberie 24h/24 — 7j/7 :</span>
+    <span class="sm:hidden">Urgence 24/7 :</span>
+    <a id="emergency-phone" href="" class="inline-flex items-center gap-1.5 font-bold underline underline-offset-2 hover:no-underline">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span id="emergency-phone-text"></span>
+    </a>
+  </div>
+</div>
+
+<!-- ============== HEADER ============== -->
+<header id="site-header" class="fixed top-9 sm:top-10 left-0 right-0 z-40 bg-white/60 backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#0f172a"/>
+        <path d="M18 8 C 13 14, 13 19, 18 24 C 23 19, 23 14, 18 8 Z" fill="#ea580c"/>
+        <rect x="16.5" y="22" width="3" height="6" rx="1.5" fill="white"/>
+      </svg>
+      <div class="flex flex-col leading-none">
+        <span class="font-heading font-bold text-lg tracking-tight text-slate-900" id="brand-name"></span>
+        <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mt-0.5">Plomberie · Liège</span>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="#services" class="text-sm font-medium text-slate-700 hover:text-orange-600 transition-colors">Services</a>
+      <a href="#about" class="text-sm font-medium text-slate-700 hover:text-orange-600 transition-colors">À propos</a>
+      <a href="#coverage" class="text-sm font-medium text-slate-700 hover:text-orange-600 transition-colors">Zone d'intervention</a>
+      <a href="#testimonials" class="text-sm font-medium text-slate-700 hover:text-orange-600 transition-colors">Avis</a>
+      <a href="#contact" class="text-sm font-medium text-slate-700 hover:text-orange-600 transition-colors">Contact</a>
+    </nav>
+
+    <a id="header-call" href="" class="hidden sm:inline-flex items-center gap-2 bg-slate-900 hover:bg-orange-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span id="header-phone-text"></span>
+    </a>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section id="top" class="relative bg-slate-50 pt-36 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700 mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+        Disponible maintenant à Liège
+      </div>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
+        Votre plombier de confiance
+        <span class="block text-orange-600">à Liège.</span>
+      </h1>
+      <p id="hero-desc" class="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed"></p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a id="hero-call" href="" class="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium px-7 py-4 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span id="hero-call-text"></span>
+        </a>
+        <a href="#services" class="inline-flex items-center justify-center gap-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-medium px-7 py-4 rounded-full transition-colors">
+          Découvrir nos services →
+        </a>
+      </div>
+      <div class="mt-12 flex items-center gap-6">
+        <div class="flex items-center gap-1" id="hero-stars"></div>
+        <div class="text-sm">
+          <div class="font-semibold text-slate-900"><span id="rating"></span>/5 sur Google</div>
+          <div class="text-slate-500"><span id="reviews-count"></span> avis clients vérifiés</div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-5 relative fade-up" style="animation-delay:.15s">
+      <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200">
+        <img src="https://images.pexels.com/photos/12196323/pexels-photo-12196323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900" alt="Robinetterie moderne" class="w-full h-full object-cover">
+      </div>
+      <div class="hidden sm:block absolute -bottom-6 -left-6 bg-white shadow-xl rounded-xl p-5 border border-slate-100 max-w-xs">
+        <div class="text-xs uppercase tracking-[0.2em] text-orange-600 font-bold mb-2">Intervention rapide</div>
+        <div class="text-2xl font-heading font-bold text-slate-900">Sous 1 heure</div>
+        <div class="text-sm text-slate-500 mt-1">en cas d'urgence sur Liège</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section id="services" class="bg-white py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600 mb-4">— Nos prestations</div>
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">Un service complet, du dépannage à la rénovation.</h2>
+      <p class="mt-6 text-base text-slate-600 leading-relaxed">Nous prenons en charge tous vos besoins de plomberie et chauffage, avec un engagement de qualité, de propreté et de tarifs honnêtes.</p>
+    </div>
+    <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 rounded-2xl overflow-hidden"></div>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section id="about" class="bg-slate-50 py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="relative reveal">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200">
+        <img src="https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?crop=entropy&cs=srgb&fm=jpg&q=85&w=900" alt="Plombier au travail" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -top-6 -right-6 bg-slate-900 text-white rounded-xl p-6 shadow-xl hidden sm:block">
+        <div class="text-4xl font-heading font-bold"><span id="years"></span></div>
+        <div class="text-sm text-slate-300 uppercase tracking-wider mt-1">années<br>d'expérience</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600 mb-4">— À propos</div>
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">Un artisan liégeois,<br>engagé et qualifié.</h2>
+      <p id="about-desc" class="mt-6 text-base text-slate-600 leading-relaxed"></p>
+      <ul id="values-list" class="mt-8 space-y-3"></ul>
+      <div id="certifications-grid" class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COVERAGE ============== -->
+<section id="coverage" class="bg-white py-24 sm:py-32 border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center mb-14 reveal">
+      <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600 mb-4">— Zone d'intervention</div>
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">Liège et sa périphérie.</h2>
+      <p class="mt-6 text-base text-slate-600 leading-relaxed">Nous intervenons dans toute la province de Liège, avec un délai d'intervention moyen sous 60 minutes en cas d'urgence.</p>
+    </div>
+    <div id="coverage-tags" class="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto reveal"></div>
+    <p class="text-center text-xs text-slate-500 mt-10">Votre commune n'est pas listée ? Contactez-nous, nous étudierons votre demande.</p>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIALS ============== -->
+<section id="testimonials" class="bg-slate-50 py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 mb-16">
+      <div class="lg:col-span-7 reveal">
+        <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-600 mb-4">— Témoignages</div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">La satisfaction de nos clients,<br>notre meilleure publicité.</h2>
+      </div>
+      <div class="lg:col-span-5 flex lg:justify-end items-end">
+        <div class="bg-white border border-slate-200 rounded-xl px-6 py-5 flex items-center gap-5">
+          <div class="text-5xl font-heading font-bold text-slate-900 leading-none"><span id="rating2"></span></div>
+          <div>
+            <div class="flex items-center gap-0.5 mb-1" id="rating-stars"></div>
+            <div class="text-xs text-slate-500"><span id="reviews-count2"></span> avis Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============== CONTACT / FOOTER ============== -->
+<footer id="contact" class="bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 sm:py-24">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <div class="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 mb-4">— Nous contacter</div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">Un projet, une urgence ?<br>Parlons-en.</h2>
+        <p class="mt-6 text-slate-400 leading-relaxed max-w-md">Notre équipe est joignable du lundi au samedi pour vos demandes, et 24h/24 en cas d'urgence sur la région liégeoise.</p>
+        <a id="footer-emergency" href="" class="mt-8 inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-500 text-white font-medium px-7 py-4 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          Appeler en urgence
+        </a>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+        <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-6">
+          <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">Téléphone</div>
+          <a id="footer-phone" href="" class="text-base font-medium hover:text-orange-400 transition-colors"></a>
+          <div class="text-xs text-slate-500 mt-1">Bureau · Lun–Sam</div>
+        </div>
+        <div class="bg-orange-600/15 border border-orange-600/30 rounded-xl p-6">
+          <div class="text-xs font-bold uppercase tracking-[0.18em] text-orange-400 mb-3">Urgence 24/7</div>
+          <a id="footer-emergency2" href="" class="text-base font-medium hover:text-orange-300 transition-colors"></a>
+          <div class="text-xs text-orange-200/70 mt-1">7j/7 — Réponse immédiate</div>
+        </div>
+        <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-6">
+          <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">Email</div>
+          <a id="footer-email" href="" class="text-base font-medium hover:text-orange-400 transition-colors break-all"></a>
+          <div class="text-xs text-slate-500 mt-1">Réponse sous 24 h</div>
+        </div>
+        <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-6">
+          <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">Adresse</div>
+          <div id="footer-address" class="text-base font-medium leading-relaxed"></div>
+        </div>
+        <div class="bg-slate-800/50 border border-slate-700/60 rounded-xl p-6 sm:col-span-2">
+          <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">Horaires</div>
+          <div id="footer-hours" class="text-base font-medium leading-relaxed"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="8" fill="#0f172a"/>
+          <path d="M18 8 C 13 14, 13 19, 18 24 C 23 19, 23 14, 18 8 Z" fill="#ea580c"/>
+          <rect x="16.5" y="22" width="3" height="6" rx="1.5" fill="white"/>
+        </svg>
+        <span class="font-heading font-bold text-white" id="footer-brand"></span>
+      </div>
+      <div class="text-xs text-slate-500 flex flex-wrap items-center gap-x-4 gap-y-2" id="footer-legal"></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ================== RENDU DU CONTENU ==================
+const $ = (id) => document.getElementById(id);
+const { business, contact, services, values, certifications, coverage, testimonials } = SITE;
+
+// Liens téléphone
+$('emergency-phone').href = 'tel:' + contact.emergencyPhoneRaw;
+$('emergency-phone-text').textContent = contact.emergencyPhoneDisplay;
+$('header-call').href = 'tel:' + contact.phoneRaw;
+$('header-phone-text').textContent = contact.phoneDisplay;
+$('hero-call').href = 'tel:' + contact.phoneRaw;
+$('hero-call-text').textContent = 'Appeler ' + contact.phoneDisplay;
+$('footer-emergency').href = 'tel:' + contact.emergencyPhoneRaw;
+$('footer-emergency2').href = 'tel:' + contact.emergencyPhoneRaw;
+$('footer-emergency2').textContent = contact.emergencyPhoneDisplay;
+$('footer-phone').href = 'tel:' + contact.phoneRaw;
+$('footer-phone').textContent = contact.phoneDisplay;
+$('footer-email').href = 'mailto:' + contact.email;
+$('footer-email').textContent = contact.email;
+
+// Brand + textes
+$('brand-name').innerHTML = business.shortName + '<span class="text-orange-600">.</span>';
+$('footer-brand').textContent = business.name;
+$('rating').textContent = business.rating;
+$('rating2').textContent = business.rating;
+$('reviews-count').textContent = business.reviewsCount;
+$('reviews-count2').textContent = business.reviewsCount;
+$('years').textContent = business.yearsOfExperience;
+$('hero-desc').textContent = `${business.name} intervient en urgence et sur rendez-vous pour tous vos travaux de plomberie, chauffage et sanitaires. ${business.yearsOfExperience} ans d'expérience, devis gratuit, tarifs transparents.`;
+$('about-desc').textContent = `Installé au cœur de Liège depuis bientôt deux décennies, ${business.name} est devenu une référence pour les particuliers et les petits professionnels qui cherchent un travail soigné, honnête et durable. Nous croyons qu'une bonne plomberie commence par une bonne écoute.`;
+
+// Adresse / horaires / légales
+$('footer-address').innerHTML = `${contact.address.street}<br>${contact.address.postal} ${contact.address.city}<div class="text-xs text-slate-500 mt-1">${contact.address.country}</div>`;
+$('footer-hours').innerHTML = `${contact.hours.weekdays}<br>${contact.hours.saturday}<div class="text-orange-400 font-medium text-xs mt-2">${contact.hours.emergency}</div>`;
+$('footer-legal').innerHTML = `<span>© ${new Date().getFullYear()} ${business.name}</span><span class="text-slate-700 hidden sm:inline">·</span><span>${contact.legal.bce}</span><span class="text-slate-700 hidden sm:inline">·</span><span>TVA ${contact.legal.tva}</span><span class="text-slate-700 hidden sm:inline">·</span><span>${contact.legal.insurance}</span>`;
+
+// Étoiles
+const starSvg = (size=16) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="#f97316" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+$('hero-stars').innerHTML = Array(5).fill(starSvg(20)).join('');
+$('rating-stars').innerHTML = Array(5).fill(starSvg(14)).join('');
+
+// Icônes services (Lucide SVG)
+const ICONS = {
+  wrench: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+  droplets: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>',
+  flame: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+  shower: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 2 22"/><path d="M10 9.5 6.5 6"/><path d="M14 9.5 17.5 6"/><path d="m6 14 4-4"/><path d="m13 12 4-4"/><circle cx="12" cy="12" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/><circle cx="11" cy="18" r="1"/></svg>',
+  waves: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>',
+  bath: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="4" x2="20" y1="13" y2="13"/></svg>',
+};
+const arrowIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
+
+// Services
+$('services-grid').innerHTML = services.map((s,i) => `
+  <div class="group bg-white p-8 lg:p-10 hover:bg-slate-50 transition-colors reveal" style="transition-delay:${i*60}ms">
+    <div class="flex items-start justify-between mb-6">
+      <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center group-hover:bg-orange-600 transition-colors">${ICONS[s.icon]||ICONS.wrench}</div>
+      <div class="text-slate-300 group-hover:text-orange-600 transition-colors">${arrowIcon}</div>
+    </div>
+    <h3 class="font-heading text-xl font-semibold text-slate-900 mb-3">${s.title}</h3>
+    <p class="text-sm text-slate-600 leading-relaxed">${s.desc}</p>
+  </div>`).join('');
+
+// Valeurs
+const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+$('values-list').innerHTML = values.map(v => `<li class="flex items-start gap-3 text-sm text-slate-700">${checkIcon}<span>${v}</span></li>`).join('');
+
+// Certifications
+$('certifications-grid').innerHTML = certifications.map(c => `
+  <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+    <div class="font-heading font-bold text-slate-900 text-sm">${c.label}</div>
+    <div class="text-[10px] uppercase tracking-wider text-slate-500 mt-1">${c.sub}</div>
+  </div>`).join('');
+
+// Zone
+const pinIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>';
+$('coverage-tags').innerHTML = coverage.map(c => `<span class="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-orange-50 hover:text-orange-700 transition-colors text-slate-800 rounded-full px-4 py-2 text-sm font-medium">${pinIcon}${c}</span>`).join('');
+
+// Témoignages
+const quoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#ea580c" class="mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>';
+$('testimonials-grid').innerHTML = testimonials.map((t,i) => `
+  <div class="bg-white border border-slate-200 rounded-2xl p-7 flex flex-col reveal" style="transition-delay:${i*60}ms">
+    ${quoteIcon}
+    <div class="flex items-center gap-0.5 mb-4">${Array(5).fill(starSvg(14)).join('')}</div>
+    <p class="text-sm text-slate-700 leading-relaxed flex-1">« ${t.text} »</p>
+    <div class="mt-6 pt-6 border-t border-slate-100">
+      <div class="font-semibold text-slate-900 text-sm">${t.name}</div>
+      <div class="text-xs text-slate-500 mt-0.5">${t.loc}</div>
+    </div>
+  </div>`).join('');
+
+// Header scrolled
+window.addEventListener('scroll', () => {
+  const h = $('site-header');
+  if (window.scrollY > 20) h.className = 'fixed top-9 sm:top-10 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300';
+  else h.className = 'fixed top-9 sm:top-10 left-0 right-0 z-40 bg-white/60 backdrop-blur-sm transition-all duration-300';
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+}, { rootMargin: '-50px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
